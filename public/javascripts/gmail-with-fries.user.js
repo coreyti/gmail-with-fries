@@ -48,9 +48,13 @@ if(document.location == top.location) {
       taste();
     }
 
+    vend = function(ingredient) {
+      return 'http://localhost:8080/vendor/javascripts/' + ingredient;
+    }
+
     prep(
       {
-        ingredient: 'http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js',
+        ingredient: vend('disco/lib/jquery.js'),
         is_tasty:   function() { return typeof window.jQuery != 'undefined'; }
       },
       function() {
